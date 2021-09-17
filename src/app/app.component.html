@@ -1,0 +1,12 @@
+<main>
+  <h1>Das ist mein Zuhause</h1>
+
+  <app-speech-utter (out)="speechInput=$event">
+  </app-speech-utter>
+
+  <h2>
+    {{speechInput}}
+  </h2>
+
+  <button (click)="test()">test</button>
+</main>

@@ -1,0 +1,26 @@
+.house {
+    padding:20px;
+    padding-top: 25px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 4px #ea4c89, inset 0 0 8px #ea4c89;
+    }
+    50% {
+        box-shadow: 0 0 30px #ea4c89, inset 0 0 14px #ea4c89;
+    }
+    100% {
+        box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+    }
+}
+
+.inner {
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    padding: 20px;
+    box-shadow: 0 0 20px #ea4c89, inset 0 0 20px #ea4c89;
+    animation: pulse 2s linear 1s infinite;
+}
