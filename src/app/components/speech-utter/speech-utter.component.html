@@ -1,8 +1,12 @@
-<div *ngIf="!eyesOpen; else:open"  (click)="listen()" class="house">
-    <img src="./assets/icons/house.png" alt="home">
+<div *ngIf="!eyesOpen; else:open" (click)="listen()" class="imageHouseHolder">
+    <img src="./assets/icons/house.png" alt="home" class="imageHouse">
+</div>
+<ng-template #open >
+  <!-- <div>{{bubbleInput}}</div> -->
+  <div id="bubbleHolder">
+    <p class="bubble thought">{{bubbleInput}}</p>
   </div>
-  <ng-template #open >
-    <div class="inner" (click)="listen()">
-      <img src="./assets/icons/house_eye.png" alt="home">
-    </div>
+  <div  (click)="listen()" class="imageHouseHolder">
+    <img src="./assets/icons/house_eye.png" alt="home" class="imageHouse">
+  </div>
 </ng-template>

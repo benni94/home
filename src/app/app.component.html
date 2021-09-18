@@ -1,12 +1,15 @@
 <main>
   <h1>Das ist mein Zuhause</h1>
 
-  <app-speech-utter (out)="speechInput=$event">
-  </app-speech-utter>
+  <div class="itemsHolder">
+    <app-speech-utter (out)="getSpeechUtter($event)">
+    </app-speech-utter>
+    <div style="width: 50px; height: 50px;"></div>
+    <app-swifts [inputSpeechutter]="inputSpeechutter"></app-swifts>
+  </div>
+  <div >
+    <app-weather-api></app-weather-api>
 
-  <h2>
-    {{speechInput}}
-  </h2>
+  </div>
 
-  <button (click)="test()">test</button>
 </main>

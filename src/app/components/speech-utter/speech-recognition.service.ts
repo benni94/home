@@ -37,14 +37,12 @@ export class SpeechRecognitionService {
           var transcript = result[0].transcript;
           if (result.isFinal) {
             if (result[0].confidence < this.accuracy) {
-             
-             /*  this.speechRecognition.
-              alert("Unrecognized result - Please try again"); */
-             
+             console.log("i can't understand you");
             }
             else {
               term = _.trim(transcript);
-              console.log("Did you said? -> " + term + " , If not then say something else...");
+              new Audio("./assets/sounds/done.mp3").play();
+             // console.log("Did you said? -> " + term + " , If not then say something else...");
             }
           }
         }

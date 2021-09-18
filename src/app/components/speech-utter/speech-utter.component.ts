@@ -19,6 +19,7 @@ export class SpeechUtterComponent implements OnInit {
   eyesOpen: boolean = false;
   showSearchButton: boolean;
   speechData: string;
+  bubbleInput: string = "";
 
   constructor(private speechRecognitionService: SpeechRecognitionService) {
     this.showSearchButton = true;
@@ -42,8 +43,6 @@ export class SpeechUtterComponent implements OnInit {
       this.speechRecognitionService.DestroySpeechObject();
       new Audio("./assets/sounds/out.mp3").play();
     }
-
-
   }
 
   activateSpeechSearchMovie(): void {
@@ -53,6 +52,7 @@ export class SpeechUtterComponent implements OnInit {
       .subscribe(
         //listener
         (value) => {
+          this.showBubble(value);
           this.speechData = value;
           this.out.emit(value);
           console.log(value);
@@ -75,4 +75,18 @@ export class SpeechUtterComponent implements OnInit {
         });
   }
 
+  showBubble($event: string) {
+    var tt = $event.split(" ");
+    var bubble = "";
+
+    if (tt[0] == 'schalt' || tt[0] == 'schalte') {
+      tt.shift();
+    };
+    console.log(tt);
+    
+    tt.forEach(ts => {
+      bubble = bubble + " " + ts
+    })
+    this.bubbleInput = "Ich schalte:" + bubble+'.';
+  }
 }

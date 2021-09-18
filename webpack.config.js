@@ -25,8 +25,8 @@ module.exports = {
     fallback: {
       "fs": false,
       "crypto": require.resolve('crypto-browserify'),
-      "stream": false,
-      //"stream": require.resolve('stream-browserify'),
+      /* "stream": false, */
+      "stream": require.resolve('stream-browserify'),
   },
     alias: {
       ...sharedMappings.getAliases(),

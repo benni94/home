@@ -10,36 +10,13 @@ export class AppComponent {
 
   title = 'home';
 
-  speechInput: string = "";
+  inputSpeechutter: string="";
 
-  constructor() { }
+  constructor() {
 
-  test() {
-    var connection = new (eWelink.default as any)({
-      email: 'benjamin.fink@gmx.at',
-      password: 'Ewelink_test',
-      region: "eu"
-    });
+  }
 
-    console.log(connection);
-    setTimeout(() => {
-      const region = connection.getDevices();
-      console.log(region);
-
-    }, 1000);
-
-    //connection.login()
-
-    /* get all devices */
-    // const devices =  connection.getDevices();
-    //console.log(devices);
-
-    /* get specific devide info */
-    /* const device = await connection.getDevice('<your device id>');
-    console.log(device); */
-
-    /* toggle device */
-    /* await connection.toggleDevice('<your device id>'); */
-
+  getSpeechUtter($event: string) {
+    this.inputSpeechutter = $event;
   }
 }
