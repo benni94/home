@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SwiftsComponent } from './components/swifts/swifts.component';
 import { WeatherApiComponent } from './components/weather-api/weather-api.component';
 import {MatIconModule} from '@angular/material/icon';
+import { HomeComponent } from './sites/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpeechUtterComponent,
     SwiftsComponent,
-    WeatherApiComponent
+    WeatherApiComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -12,17 +12,15 @@
         </mat-expansion-panel-header>
        <!--  <p>This is the primary content of the panel.</p> -->
       </mat-expansion-panel>
-
-       <!-- [expanded]=true -->
       <mat-expansion-panel 
-     
+      [expanded]=true
       (opened)="panelOpenState = true"
       (closed)="panelOpenState = false" class="extansionHeader">
         <mat-expansion-panel-header >
           <mat-panel-title>
           </mat-panel-title>
           <mat-panel-description >
-             {{panelOpenState ? 'Zum schließen klicken' : 'Zum öffnen klicken'}}
+            <!--  {{panelOpenState ? 'Zum schließen klicken' : 'Zum öffnen klicken'}} -->
           </mat-panel-description>
         </mat-expansion-panel-header>
   
@@ -38,8 +36,8 @@
               <button id="buttonOff" (click)="toggle(tt.deviceid)">{{tt.name}}</button>
             </div>
           </div>
-          <ng-template #offline class="btn{{i%2}}">
-            <div>
+          <ng-template #offline >
+            <div class="btn{{i%2}}">
               <button id="buttonOffline"  [disabled]="true">{{tt.name}}</button>
             </div>
           </ng-template>

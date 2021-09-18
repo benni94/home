@@ -53,7 +53,13 @@ export class SwiftsComponent implements OnInit {
       password: 'Ewelink_test',
       region: "eu"
     });
+    
     this.devices = await this.connection.getDevices();
+
+    setTimeout(() => {
+      console.log(this.devices);
+      
+    }, 4000);
 
     for (var gad of this.newGadgets) {
       var device = await this.connection.getDevice(gad.deviceid);

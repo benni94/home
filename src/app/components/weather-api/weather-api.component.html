@@ -1,22 +1,27 @@
 <div id="divWeatherMain">
-    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
-        <mat-icon>home</mat-icon>
-    </div>
-    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
-        <i class="fas fa-3x fa-moon moon"></i>
-    </div>
 
-   <!--  <div class="weatherWidgetRow cloudDiv">
-        <i class="fas fa-cloud fa-3x cloud"></i>
-    </div> -->
-    <div class="weatherWidgetRow" style="font-size: 32px; margin-top: 5px; text-align: center;">
-        {{WeatherData.temp_celcius}}°</div>
-    <div class="weatherWidgetRow" style="font-size: 12px; text-align: center;">{{WeatherData.temp_min}}° /
-        {{WeatherData.temp_max}}° </div>
-    <div class="weatherWidgetRow" style="font-size: 12px; text-align: center;">Fühlt sich an wie:
-        {{WeatherData.temp_feels_like}}°</div>
-    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px; text-align: center;">{{WeatherData.name}}
+    <div style="font-size: 32px; margin-top: 5px; " class="topIcons" *ngIf="promiseServer">
+        <div *ngIf="WeatherData.isDay&&WeatherData.clouds.all<50">
+            <img src="./assets/weather/sun.svg" alt="" id="weatherIcon">
+        </div>
+        <div *ngIf="!WeatherData.isDay&&WeatherData.clouds.all<50" id="weatherIcon">
+            <img src="./assets/weather/moon.svg" alt="">
+        </div>
+        <div *ngIf="WeatherData.clouds.all>=50" id="weatherIcon">
+            <img src="./assets/weather/rain.svg" alt="">
+        </div>
+        {{WeatherData.temp_celcius}}°
+        <div>
+
+            <p class="weatherWidgetRow" style="font-size: 14px; text-align: center; margin-top: 10px;">
+                Luftfeuchtigkeit:
+                {{WeatherData.main.humidity}}%
+            </p>
+           
+
+            <p class="weatherWidgetRow" style="font-size: 14px; text-align: center;">Fühlt sich an wie:
+                {{WeatherData.temp_feels_like}}°
+            </p>
+        </div>
     </div>
-    <div class="weatherWidgetRow" style="font-size: 12px; text-align: center;"> Luftfeuchtigkeit:
-        {{WeatherData.main.humidity}}%</div>
 </div>

@@ -88,5 +88,8 @@ export class SpeechUtterComponent implements OnInit {
       bubble = bubble + " " + ts
     })
     this.bubbleInput = "Ich schalte:" + bubble+'.';
+    setTimeout(() => {
+      this.bubbleInput="";
+    },4000);
   }
 }

@@ -2,8 +2,7 @@
     <img src="./assets/icons/house.png" alt="home" class="imageHouse">
 </div>
 <ng-template #open >
-  <!-- <div>{{bubbleInput}}</div> -->
-  <div id="bubbleHolder">
+  <div id="bubbleHolder" *ngIf="bubbleInput.length>0">
     <p class="bubble thought">{{bubbleInput}}</p>
   </div>
   <div  (click)="listen()" class="imageHouseHolder">

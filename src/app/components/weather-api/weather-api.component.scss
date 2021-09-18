@@ -1,19 +1,15 @@
 #divWeatherMain {
     display: block;
     border-radius: 15px;
-    width: 200px;
-    height: 220px;
-    /* background: rgb(0, 0, 0); */
-    background: linear-gradient(180deg, rgb(248, 234, 234) 0%, rgb(134, 13, 134)0%);
+    width: 350px;
+    height: 100px;
+    //background: linear-gradient(180deg, rgb(248, 234, 234) 0%, rgb(134, 13, 134) 0%);
+    background-color: #1E90FF;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.weatherWidgetRow {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-}
+
 
 .sun {
     margin-top: 10px;
@@ -27,25 +23,21 @@
     filter: drop-shadow(1px 1px 10px white);
 }
 
-/* .cloudDiv {
-    margin-top: -45px;
+.topIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+    padding-bottom: 0px;
 }
 
-.cloud {
-    color: rgb(104, 175, 197);
-    filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
-    animation-name: cloudMovement;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
-    animation-timing-function: ease-in-out;
-    animation-direction: alternate;
+#weatherIcon {
+    width: 40px;
+    filter: brightness(0) invert(1);
 }
 
-@keyframes cloudMovement {
-    from {
-        margin-left: -55px;
-    }
-    to {
-        margin-left: 65px;
-    }
-} */
+#weatherData{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

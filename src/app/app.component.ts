@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as eWelink from 'ewelink-api';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +9,10 @@ export class AppComponent {
 
   title = 'home';
 
-  inputSpeechutter: string="";
 
   constructor() {
 
   }
 
-  getSpeechUtter($event: string) {
-    this.inputSpeechutter = $event;
-  }
+  
 }
