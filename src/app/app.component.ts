@@ -14,16 +14,19 @@ export class AppComponent {
 
   constructor() { }
 
-   test() {
-    var connection = new eWelink.default({
+  test() {
+    var connection = new (eWelink.default as any)({
       email: 'benjamin.fink@gmx.at',
       password: 'Ewelink_test',
+      region: "eu"
     });
 
     console.log(connection);
+    setTimeout(() => {
+      const region = connection.getDevices();
+      console.log(region);
 
-    const region = async ()=> await connection.getDevices();
-    console.log(region);
+    }, 1000);
 
     //connection.login()
 

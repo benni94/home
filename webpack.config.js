@@ -12,6 +12,7 @@ sharedMappings.register(
 //https://exerror.com/module-not-found-error-cant-resolve-fs-in/
 
 module.exports = {
+  node:{global:true},
   output: {
     uniqueName: "home",
     publicPath: "auto"
@@ -23,7 +24,9 @@ module.exports = {
   resolve: {
     fallback: {
       "fs": false,
-      "crypto": false
+      "crypto": require.resolve('crypto-browserify'),
+      "stream": false,
+      //"stream": require.resolve('stream-browserify'),
   },
     alias: {
       ...sharedMappings.getAliases(),
